@@ -11,7 +11,7 @@ dependencies:
 test:
   override:
     - docker-compose up -d
-    - docker-compose run dockerapp python test.py
+    - docker-compose run demodockerapp python test.py
 deployment:
   hub:
     branch: [ci-publish, master]
