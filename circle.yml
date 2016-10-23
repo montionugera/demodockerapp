@@ -14,7 +14,7 @@ test:
     - docker-compose run demodockerapp python test.py
 deployment:
   hub:
-    branch: [ci-publish, master]
+    branch: /.*/
     commands:
       - docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
       - docker tag demodockerapp_demodockerapp $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
