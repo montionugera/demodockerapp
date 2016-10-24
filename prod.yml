@@ -5,6 +5,8 @@ services:
       file: common.yml
       service: dockerapp
     image: pasit/dockerapp
+    environment:
+      - constraint:node==master
     depends_on:
       - redis
     networks:
