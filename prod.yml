@@ -4,9 +4,19 @@ services:
     extends:
       file: common.yml
       service: dockerapp
-      image: pasit/dockerapp
+    image: pasit/dockerapp
+    depends_on:
+      - redis
+    networks:
+      - mynet
 
   redis:
     extends:
       file: common.yml
       service: redis
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: overlay
